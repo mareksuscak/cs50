@@ -9,6 +9,8 @@
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
 
+#define HASHTABLE_SIZE 16384
+
 // Prototypes
 bool check(const char *word);
 bool load(const char *dictionary);

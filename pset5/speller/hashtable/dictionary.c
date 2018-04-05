@@ -19,24 +19,18 @@ typedef struct node *node_t;
 
 node_t hashtable[HASHTABLE_SIZE];
 
-node_t make_node(const char *key)
-{
-    node_t node = malloc(sizeof(struct node));
-    strcpy(node->word, key);
-    node->next = NULL;
-    return node;
-}
-
 // Keeps track of the # of words in dictionary
 unsigned long words = 0;
+
+// Prototype
+node_t make_node(const char *key);
 
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
+    // Converts string to its lowercase representation
     char copy[strlen(word) + 1];
     strcpy(copy, word);
-
-    // Hashtable
     char *p = copy;
     for ( ; *p; ++p) *p = tolower(*p);
 
@@ -74,7 +68,7 @@ bool load(const char *dictionary)
     char buffer[LENGTH];
     while (fscanf(file, "%s", buffer) != EOF)
     {
-        // Hashtable
+        // Dict should contain only lowercase words
         node_t node = make_node(buffer);
 
         unsigned long hash = djb2(buffer) % HASHTABLE_SIZE;
@@ -115,4 +109,13 @@ bool unload(void)
     }
 
     return true;
+}
+
+// Makes a singly linked list node
+node_t make_node(const char *key)
+{
+    node_t node = malloc(sizeof(struct node));
+    strcpy(node->word, key);
+    node->next = NULL;
+    return node;
 }

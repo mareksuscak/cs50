@@ -57,10 +57,7 @@ bool load(const char *dictionary)
     char buffer[LENGTH];
     while (fscanf(file, "%s", buffer) != EOF)
     {
-        // Converts string to its lowercase representation
-        char *p = buffer;
-        for ( ; *p; ++p) *p = tolower(*p);
-
+        // Dict should contain only lowercase words
         bloom_insert(bf, buffer);
 
         words++;

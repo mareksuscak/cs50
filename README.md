@@ -28,7 +28,7 @@ Go ahead and take a peek at the solutions.
   * [speller](/pset5/speller)
     + [hashtable](/pset5/speller/hashtable)
     + [trie](/pset5/speller/trie)
-    + [bloom filter](/pset5/speller/bloom)
+    + [bloom filter](/pset5/speller/bloom_filter)
 - [pset6](/pset6)
   * [sentimental](/pset6/sentimental)
     + [hello](/pset6/sentimental/hello)

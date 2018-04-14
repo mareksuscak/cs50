@@ -104,7 +104,7 @@ bool trie_find(trie_t root, const char *key)
  */
 void trie_free(trie_t root)
 {
-    if (!root)
+    if (root == NULL)
     {
         return;
     }

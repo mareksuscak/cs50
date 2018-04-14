@@ -1,0 +1,46 @@
+/* fill viewport, hide scroll bar */
+html, body
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ensure content is below navbar */
+div.container-fluid
+{
+    padding-top: 56px;
+}
+
+/* fill viewport */
+div.container-fluid, div.row, div.col, div.jumbotron
+{
+    height: 100%;
+}
+
+/* remove padding within column */
+div.col
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* add padding around form */
+form
+{
+    padding: 15px;
+}
+
+/* wrap and scroll preformatted text */
+pre
+{
+    height: 100%;
+    overflow: auto;
+    padding: 15px;
+    white-space: pre-wrap;
+}
+
+/* highlight spans */
+span
+{
+    background-color: #ff0;
+}

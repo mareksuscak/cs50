@@ -33,16 +33,19 @@ def index():
 def articles():
     """Look up articles for geo"""
 
-    # TODO
-    return jsonify([])
+    items = lookup(request.args.get("geo"))
+    return jsonify(items[:5])
 
 
 @app.route("/search")
 def search():
     """Search for places that match query"""
 
-    # TODO
-    return jsonify([])
+    # Uses Full-Text Search capability (FTS4 module) of SQLite.
+    query = request.args.get("q") + "*"
+    places = db.execute("SELECT places.postal_code, places.place_name, places.admin_name1, latitude, longitude FROM places_index JOIN places ON places.rowid = places_index.rowid WHERE places_index MATCH :query", query=query)
+
+    return jsonify(places)
 
 
 @app.route("/update")

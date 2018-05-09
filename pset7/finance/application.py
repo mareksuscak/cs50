@@ -1,5 +1,5 @@
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions
@@ -99,7 +99,7 @@ def buy():
 
         flash("Bought!")
 
-        return redirect("/")
+        return redirect(url_for("index"))
 
     else:
         return render_template("buy.html")
@@ -114,6 +114,23 @@ def history():
         "SELECT symbol, shares, price_per_share, created_at FROM transactions WHERE user_id = :user_id ORDER BY created_at ASC", user_id=session["user_id"])
 
     return render_template("history.html", transactions=transactions)
+
+
+@app.route("/funds/add", methods=["GET", "POST"])
+@login_required
+def add_funds():
+
+    if request.method == "POST":
+        try:
+            amount = float(request.form.get("amount"))
+        except:
+            return apology("amount must be a real number", 400)
+
+        db.execute("UPDATE users SET cash = cash + :amount WHERE id = :user_id", user_id=session["user_id"], amount=amount)
+
+        return redirect(url_for("index"))
+    else:
+        return render_template("add_funds.html")
 
 
 @app.route("/change_password", methods=["GET", "POST"])
@@ -186,7 +203,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect(url_for("index"))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -201,7 +218,7 @@ def logout():
     session.clear()
 
     # Redirect user to login form
-    return redirect("/")
+    return redirect(url_for("index"))
 
 
 @app.route("/quote", methods=["GET", "POST"])
@@ -258,7 +275,7 @@ def register():
         flash("Registered!")
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect(url_for("index"))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -313,7 +330,7 @@ def sell():
 
         flash("Sold!")
 
-        return redirect("/")
+        return redirect(url_for("index"))
 
     else:
         stocks = db.execute(

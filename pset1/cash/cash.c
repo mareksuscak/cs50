@@ -4,12 +4,11 @@
 
 int main()
 {
-    float dollars_owed;
     int cents_owed;
 
     do
     {
-        dollars_owed = get_float("Change owed: ");
+        float dollars_owed = get_float("Change owed: ");
         cents_owed = round(dollars_owed * 100);
     }
     while (cents_owed <= 0);

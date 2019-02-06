@@ -1,4 +1,4 @@
-CS50 — 2018 solutions
+CS50x — 2018 solutions
 =====================
 
 Go ahead and take a peek at the solutions.
@@ -53,4 +53,4 @@ Go ahead and take a peek at the solutions.
 - [An official announcement](https://www.facebook.com/TNSlovakia/posts/758423431009895)
 - [My personal announcement](https://www.facebook.com/mareksuscak/posts/10212448694424737)
 - [My certificate of gratitude](https://www.facebook.com/photo.php?fbid=10212767883924275&set=a.1747426837808.2090961.1002913113&type=3)
-- [Prof. David J. Malan's greets graduates of the first CS50 batch in Slovakia](https://www.facebook.com/vladimir.liulka/posts/1487077188057449)
+- [Prof. David J. Malan's greets graduates of the first CS50x batch in Slovakia](https://www.facebook.com/vladimir.liulka/posts/1487077188057449)

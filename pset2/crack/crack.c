@@ -18,7 +18,7 @@
 // zamyla:50cI2vYkF0YU2 => LOL
 
 /**
- * Here's how the algorithm progresses in 5 steps. 
+ * Here's how the algorithm progresses in 5 steps.
  * X is a letter placeholder, \0 is a null character.
  * 5 lines = 5 loops
  *
@@ -63,10 +63,10 @@ int main(int argc, string argv[])
             {
                 for (int second = 0; second < letters_count; second++)
                 {
-		    // The innermost loop advances most frequently compared to its ascendants,
-		    // therefore according to the scheme above, it maps to the first letter.
-		    // We could initialize it to 0 but that would be an empty string
-		    // (i.e. no password) which is not allowed (should not be!)
+                    // The innermost loop advances most frequently compared to its ascendants,
+                    // therefore according to the scheme above, it maps to the first letter.
+                    // We could initialize it to 0 but that would be an empty string
+                    // (i.e. no password) which is not allowed (should not be!)
                     for (int first = 1; first < letters_count; first++)
                     {
                         key_candidate[0] = letters[first];  // 1)
@@ -75,11 +75,11 @@ int main(int argc, string argv[])
                         key_candidate[3] = letters[fourth]; // 4)
                         key_candidate[4] = letters[fifth];  // 5)
 
-			// It's important to realize that most string manipulation functions in C
-			// stop looping over the characters once they encounter a null character.
-			// That's essentially what this algorithm leverages when it initializes
-			// the key_candidate full of null characters and progresses from 1-letter
-			// all the way through 5-letter strings.
+                        // It's important to realize that most string manipulation functions in C
+                        // stop looping over the characters once they encounter a null character.
+                        // That's essentially what this algorithm leverages when it initializes
+                        // the key_candidate full of null characters and progresses from 1-letter
+                        // all the way through 5-letter strings.
                         if (strcmp(crypt(key_candidate, salt), hash) == 0)
                         {
                             printf("%s\n", key_candidate);

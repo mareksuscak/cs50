@@ -92,5 +92,8 @@ int main(int argc, string argv[])
     }
 
     printf("Password couldn't be cracked!");
+
+    // This may be out of scope of the task but we signal failure w/ a different
+    // exit status than 1 (wrong arguments) or 0 (success) which have been reserved.
     return 2;
 }

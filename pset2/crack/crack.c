@@ -40,7 +40,7 @@ int main(int argc, string argv[])
 
     // TODO: how can i compute the length of the string below?
 
-    // 26 lowercase + 26 uppercase + \0 counts as 1 letter = 53
+    // 26 lowercase + 26 uppercase + \0 counts as 1 character = 53
     const int letters_count = 53;
 
     // TODO: possible improvement => https://en.wikipedia.org/wiki/Letter_frequency

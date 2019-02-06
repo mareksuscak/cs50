@@ -1,4 +1,4 @@
-CS50x — 2018 solutions
+CS50 — 2018 solutions
 =====================
 
 Go ahead and take a peek at the solutions.

@@ -27,6 +27,14 @@ int main()
 
     while (cc_number > 0)
     {
+        // Many of you are probably wondering why digit2 = digit1.
+        // The key to understanding how this works is right below
+        // that line — since digit1 is assigned AFTER its value's
+        // assigned to digit2, it means it will always contain
+        // the value of digit1 from the previous loop iteration.
+        // Therefore, after completing all iterations it will
+        // hold last but one value processed — the second digit
+        // since we progress from the end to the start of the number.
         digit2 = digit1;
         digit1 = cc_number % 10;
 

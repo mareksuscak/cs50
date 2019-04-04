@@ -44,7 +44,7 @@ Go ahead and take a peek at the solutions.
     + [less](/pset6/similarities/less)
     + [more](/pset6/similarities/more)
 - [pset7](/pset7)
-  * [finance](/pset7/similarities)
+  * [finance](/pset7/finance)
 - [pset8](/pset8)
   * [mashup](/pset8/mashup)
 

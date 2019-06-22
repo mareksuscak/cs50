@@ -50,7 +50,9 @@ Go ahead and take a peek at the solutions.
 - [pset8](/pset8)
   * [mashup](/pset8/mashup)
 
-## Links
+## Full Disclosure
+
+I worked out these solutions as part of the preparation for a CS50x course I led during winter 2018/19 in the city of Kosice, Slovakia. This way, I would like to express my gratitude for this great opportunity.
 
 - [An official announcement](https://www.facebook.com/DanubeDigital/posts/758423431009895)
 - [My personal announcement](https://www.facebook.com/mareksuscak/posts/10212448694424737)

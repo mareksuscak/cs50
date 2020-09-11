@@ -7,7 +7,7 @@ def main():
         dollars_owed = get_float("Change owed: ")
         cents_owed = floor(dollars_owed * 100)
 
-        if cents_owed > 0:
+        if cents_owed <= 0:
             break
 
     quarters = cents_owed // 25

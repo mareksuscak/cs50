@@ -1,4 +1,4 @@
-// Adapted from http://bit.ly/2GE2nTc
+// Adapted from http://bit.ly/3iAvbSr
 
 #include <string.h>
 #include <stdlib.h>
